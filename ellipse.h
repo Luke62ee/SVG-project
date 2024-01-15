@@ -21,13 +21,13 @@ public:
   istream &read(istream &input) override;
 
 private:
-  // coordinates for center of circle
+  // coordinates for center of ellipse
   int cx{0}, cy{0};
 
-  // radius of circle
+  // radius of ellipse (horizontal and vertical)
   int rx{0}, ry{0};
 
-  // color of circle
+  // color of the ellipse
   string color{"black"};
 };
 
