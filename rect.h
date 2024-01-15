@@ -21,13 +21,13 @@ public:
   istream &read(istream &input) override;
 
 private:
-  // coordinates for center of circle
+  // coordinates for the top-left corner of the rectangle
   int x{0}, y{0};
 
-  // radius of circle
+  // dimensions of the rectangle
   int width{0}, height{0};
 
-  // color of circle
+  // color of retangle
   string color{"black"};
 };
 
