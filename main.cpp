@@ -1,4 +1,6 @@
 #include "circle.h"
+#include "ellipse.h"
+#include "rect.h"
 #include "svg.h"
 #include <fstream>
 #include <iostream>
@@ -19,6 +21,10 @@ vector<SVG *> readSVGFile(const string &inFile) {
     cout << "Reading: " << sType << endl;
     if (sType == "circle") {
       obj = new Circle();
+    } else if (sType == "rect") {
+      obj = new Rect();
+    } else if (sType == "ellipse") {
+      obj = new Ellipse();
     } else {
       cout << "Unrecognized type: " << sType << endl;
       string junk;
@@ -54,6 +60,7 @@ bool writeSVGFile(const string &outFile, vector<SVG *> &svgs) {
     obj->write(fout);
   }
   fout << "</svg>" << endl;
+
   fout.close();
   return true;
 }
@@ -76,6 +83,5 @@ int main(int argc, char *argv[]) {
     exit(EXIT_FAILURE);
   }
   processSVGFile(argv[1], argv[2]);
-
   return EXIT_SUCCESS;
 }
