@@ -25,15 +25,3 @@ How It Was Addressed: The parameter name 'in' in the 'Circle::read', 'Rect::read
 Warning Addressed: The warning was related to an exception that may be thrown in the main function in main.cpp, which should not throw exceptions as per the rule[bugprone-exception-escape,-warnings-as-errors]
 
 How It Was Addressed: In the writeSVGFile function in main.cpp, it was observed that fout.close(); was explicitly called to close the ofstream. This call can be removed as the ofstream's destructor automatically handles the closure of the file. This change embraces the RAII (Resource Acquisition Is Initialization) principle, making the code more robust and concise without affecting its functionality
-
-How to create a rabbit:
-circle 400 300 150 grey
-circle 350 250 20 white
-circle 450 250 20 white
-circle 350 250 10 black
-circle 450 250 10 black
-ellipse 400 320 15 10 pink
-ellipse 330 150 40 80 grey
-ellipse 470 150 40 80 grey
-ellipse 330 150 20 40 pink
-ellipse 470 150 20 40 pink
